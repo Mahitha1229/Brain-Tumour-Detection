@@ -35,6 +35,18 @@
 - **Pre-processing:** Complete (resizing, normalization already applied)
 - **Ready for:** Direct model training without additional preprocessing
 
+## 5. DataLoader Implementation
+**Finding:** Successfully created a memory-efficient PyTorch DataLoader that:
+- Loads .npy files on-demand (prevents memory overload)
+- Handles multiple archive structures automatically  
+- Confirmed image dimensions: 128×128×3 (RGB)
+- Ready for model training
+
+**Test Results:** 
+- Loaded 3,325 glioma samples from archive (5)
+- Loaded 1,321 glioma samples from archive
+- Total: 4,646 samples successfully processed
+
 ## 🚀 Next Steps
 1. Develop custom PyTorch DataLoader for NumPy arrays
 2. Implement ResNet model compatible with pre-processed data
