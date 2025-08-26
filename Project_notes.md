@@ -13,8 +13,10 @@
 | `archive` | `Training/`, `Testing/` subfolders | `.npy` files |
 | `archive (1)` | Direct class folders (`glioma_tumor/`, `meningioma_tumor/`, `normal/`, `pituitary_tumor/`) | `.npy` files |
 | `archive (2)` | Binary-style folders (`no/`, `pred/`, `yes/`) | `.npy` files |
+| `archive (3)` | `Training/`, `Testing/` subfolders | `.npy` files |
 | `archive (4)` | Binary classification (`no/`, `yes/`) | `.npy` files |
 | `archive (5)` | Medical classification (`glioma/`, `healthy/`, `meningioma/`, `pituitary/`) | `.npy` files |
+| `archive (9)` | `Training/`, `Testing/` subfolders | `.npy` files |
 | `archive (10)` | ML split folders (`train/`, `valid/`) | `.npy` files |
 
 ### 3. Technical Specification
