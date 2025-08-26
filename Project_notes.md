@@ -3,11 +3,9 @@
 ## 📁 Dataset Exploration Findings
 
 ### 1. Initial Dataset Structure Discovery
-**Date:** [Add today's date]  
 **Finding:** The dataset is distributed across multiple archive folders (`archive`, `archive (1)`, ..., `archive (10)`), each containing pre-processed `.npy` files rather than raw images.
 
 ### 2. Archive Folder Structure Analysis
-**Date:** [Add today's date]  
 **Finding:** Heterogeneous organizational structures discovered across different archives:
 
 | Archive Folder | Internal Structure | Content Type |
@@ -20,14 +18,12 @@
 | `archive (10)` | ML split folders (`train/`, `valid/`) | `.npy` files |
 
 ### 3. Technical Specification
-**Date:** [Add today's date]  
 **Finding:** All data files are in NumPy array format (`.npy` extension), indicating:
 - Pre-processing (resizing, normalization, noise removal) already completed
 - Data ready for direct model training
 - Need for custom data loading strategy
 
 ## 4. Data Specification Analysis
-**Date:** [Add today's date]  
 **Finding:** Detailed analysis of .npy files reveals:
 
 - **Image Dimensions:** 128 × 128 pixels RGB (3 channels)
@@ -36,7 +32,7 @@
 - **Ready for:** Direct model training without additional preprocessing
 
 ## 5. DataLoader Implementation
-**Finding:** Successfully created a memory-efficient PyTorch DataLoader that:
+**Finding:** Created a memory-efficient PyTorch DataLoader that:
 - Loads .npy files on-demand (prevents memory overload)
 - Handles multiple archive structures automatically  
 - Confirmed image dimensions: 128×128×3 (RGB)
@@ -46,6 +42,16 @@
 - Loaded 3,325 glioma samples from archive (5)
 - Loaded 1,321 glioma samples from archive
 - Total: 4,646 samples successfully processed
+
+## 6. ResNet++ Model Implementation
+**Achievement:** Implemented ResNet++ from scratch in pure PyTorch featuring:
+- Custom residual blocks (BasicBlock)
+- Channel attention mechanisms (AttentionBlock)  
+- Enhanced feature extraction for medical images
+- Optimized for 128×128×3 input dimensions
+- 4-class output layer for tumor classification
+
+**Test Results:** Model processes batch of 4 images → produces 4 predictions with 4 class scores each
 
 ## 🚀 Next Steps
 1. Develop custom PyTorch DataLoader for NumPy arrays
