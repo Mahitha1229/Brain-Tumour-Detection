@@ -1,0 +1,8 @@
+Metric,Value
+Accuracy,0.9867
+Mean Specificity,0.9956
+Macro F1,0.9856
+Weighted F1,0.9867
+Macro AUC,0.9996
+mAP,0.9993
+Cohen's Kappa,0.9820

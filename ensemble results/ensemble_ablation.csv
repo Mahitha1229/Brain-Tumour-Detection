@@ -1,0 +1,11 @@
+Configuration,Accuracy,Macro-F1,Cohen-K
+TumorDetNet (single-pass),0.989503,0.989326,0.985783
+TumorDetNet (TTA N=10),0.987845,0.987270,0.983540
+ResNet50 (single-pass),0.977901,0.976236,0.970079
+ResNet50 (TTA N=10),0.986188,0.985277,0.981305
+MobileNetV2 (single-pass),0.910497,0.908723,0.879011
+MobileNetV2 (TTA N=10),0.967403,0.965183,0.955862
+InceptionV3 (single-pass),0.966851,0.964964,0.955140
+InceptionV3 (TTA N=10),0.979006,0.977575,0.971578
+Ensemble of TTA - equal-weight,0.986740,0.985627,0.982049
+Ensemble of TTA - accuracy-weighted,0.986740,0.985627,0.982049
