@@ -37,7 +37,8 @@ TumorDetNet's single-pass accuracy (0.9895) is the highest individual result in 
 ## Repo structure
 ```
 notebooks/   — all 5 Jupyter notebooks (4 individual models + ensemble)
-results/     — extracted results CSVs for quick reference / paper tables
+ensemble results/     — extracted results CSVs for quick reference / paper tables
+model_coparison_summary
 ```
 <!--
 ## Status
