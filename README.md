@@ -23,13 +23,16 @@ Deep learning pipeline for 4-class brain tumour MRI classification (glioma, meni
 
 | Model | Accuracy | Macro F1 | Weighted F1 | Macro AUC | mAP | Mean Specificity |
 |---|---|---|---|---|---|---|
-| TumorDetNet (custom) | 0.9878 | 0.9873 | 0.9878 | 0.9995 | 0.9987 | 0.9963 |
-| ResNet50 | 0.9840 | 0.9826 | 0.9839 | 0.9996 | 0.9964 | 0.9926 |
-| InceptionV3 | 0.9757 | 0.9741 | 0.9756 | 0.9987 | 0.9940 | 0.9890 |
-| MobileNetV2 | 0.9652 | 0.9632 | 0.9650 | 0.9974 | 0.9674 | 0.9703 |
-| **Ensemble** | *see `results/ensemble_results_summary.csv` once generated* | | | | | |
+| TumorDetNet (custom) | **0.9895** (single-pass, best overall) / 0.9878 (TTA) | 0.9873 | 0.9878 | 0.9995 | 0.9987 | 0.9963 |
+| ResNet50 | 0.9840 (TTA) | 0.9826 | 0.9839 | 0.9996 | 0.9964 | 0.9926 |
+| InceptionV3 | 0.9757 (TTA) | 0.9741 | 0.9756 | 0.9987 | 0.9940 | 0.9890 |
+| MobileNetV2 | 0.9652 (TTA) | 0.9632 | 0.9650 | 0.9974 | 0.9674 | 0.9703 |
+| **Ensemble (soft-voting, TTA-averaged inputs)** | 0.9867 | 0.9856 | 0.9867 | 0.9996 | 0.9993 | 0.9956 |
 
-Full per-model CSVs (per-class metrics, sensitivity/specificity, bootstrap CI, McNemar's test, ablation, calibration) are produced directly by each notebook's Output & Packaging section.
+Full per-model CSVs (per-class metrics, sensitivity/specificity, bootstrap CI, McNemar's test, ablation, calibration) are in `results/`.
+
+### Key finding: ensembling did not significantly beat the best single model
+TumorDetNet's single-pass accuracy (0.9895) is the highest individual result in this study. The 4-model soft-voting ensemble reached 0.9867 — very close, with slightly better calibration (Macro AUC 0.9996, mAP 0.9993) and Cohen's kappa (0.9820) — but McNemar's test comparing the ensemble against TumorDetNet alone was **not statistically significant (p = 0.8318)**. This suggests TumorDetNet had already reached close to the achievable ceiling on this dataset, leaving little room for the ensemble to correct further. Both results are reported transparently rather than only the more favorable one.
 
 ## Repo structure
 ```
@@ -39,8 +42,8 @@ results/     — extracted results CSVs for quick reference / paper tables
 <!--
 ## Status
 - [x] 4 backbone models trained and evaluated
-- [x] Ensemble notebook built (v1: raw single-pass; v2: adds TTA per model before combining)
-- [ ] Ensemble results finalized on Kaggle
+- [x] Ensemble notebook built and run (TTA-averaged soft-voting, v2)
+- [x] Ensemble results finalized — see Results table above and `results/`
 - [ ] SOTA literature comparison table populated with cited baselines
 - [ ] Cross-dataset generalization check
 - [ ] Manuscript write-up
