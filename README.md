@@ -36,7 +36,7 @@ Full per-model CSVs (per-class metrics, sensitivity/specificity, bootstrap CI, M
 notebooks/   — all 5 Jupyter notebooks (4 individual models + ensemble)
 results/     — extracted results CSVs for quick reference / paper tables
 ```
-
+<!--
 ## Status
 - [x] 4 backbone models trained and evaluated
 - [x] Ensemble notebook built (v1: raw single-pass; v2: adds TTA per model before combining)
@@ -44,8 +44,4 @@ results/     — extracted results CSVs for quick reference / paper tables
 - [ ] SOTA literature comparison table populated with cited baselines
 - [ ] Cross-dataset generalization check
 - [ ] Manuscript write-up
-
-**Note on ensemble (in progress):** the v1 equal-weight ensemble (raw single-pass predictions) scored 0.9845 accuracy, slightly *below* TumorDetNet alone (0.9895) — not statistically significant per McNemar's test (p=0.136), but not an improvement either. This was traced to MobileNetV2's weak single-pass score (0.9105) dragging the average down. v2 adds 10-pass TTA per model before ensembling (matching how each model's own reported accuracy was obtained), which should close that gap — pending a finished run on Kaggle.
-
-## Citation / Ethics
-This study uses only publicly available, anonymised MRI imaging data. No IRB approval was required per the dataset's licence terms. See the Ethics & Dataset Statement cell in each notebook for full details.
+-->
