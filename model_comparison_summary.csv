@@ -1,0 +1,5 @@
+Model,Accuracy,Mean Specificity,Macro F1,Weighted F1,Macro AUC,mAP
+TumorDetNet (custom),0.9878,0.9963,0.9873,0.9878,0.9995,0.9987
+ResNet50,0.984,0.9926,0.9826,0.9839,0.9996,0.9964
+InceptionV3,0.9757,0.989,0.9741,0.9756,0.9987,0.994
+MobileNetV2,0.9652,0.9703,0.9632,0.965,0.9974,0.9674
