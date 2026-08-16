@@ -1,0 +1,5 @@
+Class,Sensitivity,Specificity
+glioma,0.95,1.0
+meningioma,0.997624703087886,0.986321094312455
+no tumor,1.0,0.9966555183946488
+pituitary,0.992,0.9993031358885017
